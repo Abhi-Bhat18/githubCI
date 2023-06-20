@@ -15,4 +15,10 @@ jobs :
         steps :
             - name : get-date
               run : Get-Date
-        
+    use-mac :
+        needs : [use-windows,use-ubuntu]
+        name : mac-sys
+        runs-on : mac-latest
+        steps :
+            - name : get-date
+              run : echo date
